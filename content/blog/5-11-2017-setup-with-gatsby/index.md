@@ -139,10 +139,14 @@ And following their steps, 2 minutes later, you could even have a Https-enabled 
 ## All live, up to the next steps.
 Here you go, we are live on [easyblog.be](https://easyblog.be).
 
-Follow along my code on [Github](https://github.com/easybird/blog.easybird.be). I made a special tag with the code up until this point.
-
 ![live website without css][siteWithoutCss]
 
 [siteWithoutCss]: /blog/live-site-without-css.jpeg "Live blog on Easyblog.be without styling"
 
-But nah...this looks *shitty* without styling, let's [add styling](/styling-my-blog-with-glamourous) in the next step!
+## Follow along on [Github](https://github.com/easybird/blog.easybird.be).
+
+As most probably, and hopefully (!), when you read this, the site is already cleaned up and looks better than on the image above. If you want to follow along how this site looked like up until this point, I made a special [git tag](https://github.com/easybird/blog.easybird.be/releases/tag/live-without-css), check this out if you want to see how it looked like.
+
+
+## Next step
+But nah...this looks *shitty* without styling, so let's [add styling with Glamorous in the next step!](/styling-my-blog-with-glamorous)
