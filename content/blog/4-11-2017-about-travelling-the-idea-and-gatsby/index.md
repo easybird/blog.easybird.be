@@ -1,7 +1,7 @@
 ---
 title: "About travelling, the idea, Gatsby and blogging."
-cover: "/cover/jonathan-en-nina-mountains.jpg"
-date: "04/11/2017"
+cover: "/blog/jonathan-en-nina-mountains.jpg"
+date: "04/11/2017 17:30 +0100"
 category: "general"
 tags:
     - programming
@@ -20,7 +20,7 @@ All topics in the title deserve their own post..this post TLDRs all of them.🤠
 We're currently roadtrippin' back from France to Belgium. We come from the Alps, going back home.
 And in the car next to my 4 month old baby, I came up an idea...
 
-[Interested in more details about our journey?](/one-week-off-to-the-alps-and-back)
+[Interested in more details about our journey?](/to-the-alps)
 
 ## The idea - things worth blogging
 
@@ -51,7 +51,7 @@ Basically, the JAMStack is a fancy word for a modern static website.😇 But as 
 
 Anyway, the world of software development is always on the move, and as in the most recent years we moved from the server, to client-side and back, the jamstack is about hosting static (on a cdn) whatever we can, using markup for our content and smartly using micro api's to do the rest. It's all about using cli's for pre-rendering, and external api's or lambda functions for "back-end related matter". When following all the ins and the outs in the world of web development, this seems like a logical next step. Pretty neat and clean, isn't it?
 
-> Note: Specifically interested in my setup using Gatsby? Then go straight to the [code](/setup-your-own-blog-site-in-no-time-with-gatsby).
+> Note: Specifically interested in my setup using Gatsby? Then go straight to the [code](/setup-your-own-blog-in-no-time-with-gatsby).
 
 ### Why Gatsby?
 [This website](https://www.staticgen.com/) tries to bundle all the static site generators. I've tried [Hugo](http://gohugo.io/), a lighting fast framework for building static sites. It's written in Go and is a very flexible, template based content management system. Easy to learn, and loads of benefits, but for me, there were two main downsides:
@@ -63,9 +63,9 @@ Anyway, the world of software development is always on the move, and as in the m
 
 Well indeed, there is [Next.js](https://zeit.co/blog/next4), and there is [Phenomic](https://phenomic.io/). I've created a website using the latter. I liked it, but it wasn't as flexible as I would've like it, and the framework was in an early phase. But they were still working on a 2.0 version when I chose to try out Gatsby. So I can't really comment on their latests version.
 
-[Read more about the benefits of Gatsby and my road towards the creation of the blog](/setup-your-own-blog-site-in-no-time-with-gatsby).
+[Read more about the benefits of Gatsby and my road towards the creation of the blog](/setup-your-own-blog-in-no-time-with-gatsby).
 
 ## Blogging
-Oh yeah, *excitement*, the last paragraph!🙌 I created my first blogposts in the back of my own car.🚗 Thanks to my wife, the driver I have time to do this. Currently still blogging in my Atom editor, in a markdown file. But most probably I will put this blog on [Netlify](http://netlify.com), and add the [Netlify CMS](https://www.netlifycms.org) to it. As it's a pretty straight forward mini CMS that does exactly what I need, but first, let's finish the above posts in detail.
+Oh yeah, *excitement*, the last paragraph!🙌 I created my first blogpost in the back of my own car.🚗 Thanks to my wife, the driver I have time to do this. Currently still blogging in my Atom editor, in a markdown file. But most probably I will put this blog on [Netlify](http://netlify.com), and add the [Netlify CMS](https://www.netlifycms.org) to it. As it's a pretty straight forward mini CMS that does exactly what I need, but first, let's finish the above posts in detail.
 
 [The ins and the outs of my blog](/the-blog)
