@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
+import "../helpers/typography"; // add typography theme
 import "./index.css";
 
 export default class MainLayout extends React.Component {

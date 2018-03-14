@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import SiteTitle from "../components/common/SiteTitle";
 
 class Index extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Index extends React.Component {
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
+        <SiteTitle title={config.siteTitle} />
         <PostListing postEdges={postEdges} />
       </div>
     );
@@ -19,7 +21,7 @@ class Index extends React.Component {
 
 export default Index;
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(

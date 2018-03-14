@@ -5,6 +5,8 @@ import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import SEO from "../components/SEO/SEO";
+import { ContainerDiv, HeroDiv, ContentDiv, HeroImg } from "../layouts/styles";
+import SiteTitle from "../components/common/SiteTitle";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
@@ -21,30 +23,37 @@ export default class PostTemplate extends React.Component {
       post.category_id = config.postDefaultCategoryID;
     }
     return (
-      <div>
+      <ContainerDiv>
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div>
-          <h1>
-            {post.title}
-          </h1>
-          { post.cover && <img src={post.cover} alt='cover' />}
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-          <div className="post-meta">
+        <SiteTitle title={config.siteTitle} />
+        <article>
+          <ContentDiv>
+            <h1>{post.title}</h1>
+          </ContentDiv>
+          {post.cover && (
+            <HeroDiv>
+              <HeroImg src={post.cover} alt="cover" />
+            </HeroDiv>
+          )}
+          <ContentDiv dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <ContentDiv className="post-meta">
             <PostTags tags={post.tags} />
             <SocialLinks postPath={slug} postNode={postNode} />
-          </div>
-          <UserInfo config={config} />
-          <Disqus postNode={postNode} />
-        </div>
-      </div>
+          </ContentDiv>
+          <ContentDiv>
+            <UserInfo config={config} />
+            <Disqus postNode={postNode} />
+          </ContentDiv>
+        </article>
+      </ContainerDiv>
     );
   }
 }
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

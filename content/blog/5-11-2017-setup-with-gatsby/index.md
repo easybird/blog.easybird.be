@@ -18,7 +18,7 @@ Let's create a basic blog with Gatsby and deploy it on [Netlify](https://netlify
 
 ### Install the Gatsby cli
 ```bash
-npm install --global gatsby-cli
+$ npm install --global gatsby-cli
 ```
 
 ### Create an initial Gatsby site with one of it's [starters](https://www.gatsbyjs.org/docs/gatsby-starters/)
@@ -38,8 +38,8 @@ In fact, I could as well start from the most clean version, as most of those thi
 Mosts probably I won't need them all..and maybe later on I will clean up what I don't need..but for now, it get's me started quite easy with some nice features out of the box.
 
 ```bash
-gatsby new YourProjectName https://github.com/Vagr9K/gatsby-advanced-starter
-npm run dev
+$ gatsby new YourProjectName https://github.com/Vagr9K/gatsby-advanced-starter
+$ npm run dev
 ```
 
 And yay, go to [http://localhost:8000](http://localhost:8000), and we have our basic blog! Go to the SiteConfig.js file and change the config to your needs.
@@ -115,11 +115,11 @@ For this I'm using [Netlify](https://netlify.com).
 
 First, clone the project with git, to [Github](https://github.com):
 ```bash
-git init
-git add --all
-git commit -m 'initial commit'
-git remote add origin https://github.com/YOUR_GITHUB_NAME/YOUR_GITHUB_REPO_NAME.git
-git push -u origin master
+$ git init
+$ git add --all
+$ git commit -m 'initial commit'
+$ git remote add origin https://github.com/YOUR_GITHUB_NAME/YOUR_GITHUB_REPO_NAME.git
+$ git push -u origin master
 ```
 
 And then create a login on [Netlify.com](https://netlify.com) and add the correct build settings, which can be seen below.

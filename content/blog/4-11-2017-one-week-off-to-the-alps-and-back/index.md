@@ -1,14 +1,12 @@
 ---
 title: "To the Alps"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
+cover: "/blog/betty-en-nina-mountains.jpg"
 date: "04/11/2017 19:30 +0200"
 category: "lifestyle"
 tags:
     - travelling
     - fun
 ---
-# To the Alps
-
 ## TLDR
 > Riding off that mountain, free as a bird.
 

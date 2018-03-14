@@ -1,6 +1,6 @@
 module.exports = {
   blogPostDir: "blog", // The name of directory that contains your posts.
-  siteTitle: "Gatsby Advanced Starter", // Site title.
+  siteTitle: "Easyblog", // Site title.
   siteTitleAlt: "GatsbyJS Advanced Starter", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://easyblog.be", // Domain of your website without pathPrefix.
@@ -22,20 +22,20 @@ module.exports = {
     {
       label: "GitHub",
       url: "https://github.com/easybird",
-      iconClassName: "fa fa-github"
+      iconClassName: "fa fa-github",
     },
     {
       label: "Twitter",
       url: "https://twitter.com/J_dierckens",
-      iconClassName: "fa fa-twitter"
+      iconClassName: "fa fa-twitter",
     },
     {
       label: "Email",
       url: "mailto:jonathan@easybird.be",
-      iconClassName: "fa fa-envelope"
-    }
+      iconClassName: "fa fa-envelope",
+    },
   ],
   copyright: "Copyright © 2017. Easybird", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+  backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };

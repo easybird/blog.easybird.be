@@ -7,8 +7,6 @@ tags:
     - blogging
     - fun
 ---
-# The blog
-
 ## TLDR
 > Riding off that mountain, free as a bird.
 
