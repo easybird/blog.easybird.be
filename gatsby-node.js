@@ -2,6 +2,7 @@ const {
   createPosts,
   createAuthors,
   createCategories,
+  createTags,
 } = require('./src/factory')
 
 exports.createPages = params =>

@@ -4,6 +4,7 @@ import {
   createPostUrlFromSlug,
   createPostUrlFromAuthorName,
   createPostUrlFromCategory,
+  createTagUrl,
 } from '../../utils'
 import './index.css'
 
@@ -47,7 +48,7 @@ const IndexPost = ({ node }) => (
     {node.tags && (
       <div className="tags">
         {node.tags.map(tag => (
-          <Link style={tagStyle} to={`/${tag}`}>
+          <Link style={tagStyle} to={createTagUrl(tag)}>
             {tag}
           </Link>
         ))}

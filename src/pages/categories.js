@@ -1,5 +1,5 @@
 import React from 'react'
-import Link, { navigateTo } from 'gatsby-link'
+import Link from 'gatsby-link'
 import { createPostUrlFromCategory } from '../utils'
 
 const CategoryPage = ({ data: { allContentfulCategory: { edges } } }) => (
