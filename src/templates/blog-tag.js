@@ -2,19 +2,16 @@ import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import PostOverview from '../components/PostOverview'
 
-class BlogCategory extends Component {
+class BlogTag extends Component {
   render() {
-    console.log(this.props)
     const { data: { allContentfulPost: { edges } } } = this.props
     return (
-      <div>
-        <PostOverview nodes={edges} />
-      </div>
+      <div>{edges && edges.node && <PostOverview nodes={edges.node} />}</div>
     )
   }
 }
 
-export default BlogCategory
+export default BlogTag
 
 export const pageQuery = graphql`
   query blogTagQuery($tag: String!) {

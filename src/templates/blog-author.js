@@ -29,7 +29,7 @@ class BlogAuthor extends Component {
             __html: biography.childMarkdownRemark.html,
           }}
         />
-        <PostOverview nodes={post} />
+        {post && <PostOverview nodes={post} />}
       </div>
     )
   }

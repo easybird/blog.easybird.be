@@ -4,7 +4,6 @@ import PostOverview from '../components/PostOverview'
 
 class BlogCategory extends Component {
   render() {
-    console.log(this.props)
     const {
       title,
       post,
@@ -26,7 +25,7 @@ class BlogCategory extends Component {
         </div>
         <hr />
         <h3>{shortDescription && shortDescription.shortDescription}</h3>
-        <PostOverview nodes={post} />
+        {post && <PostOverview nodes={post} />}
       </div>
     )
   }
