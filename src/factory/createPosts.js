@@ -1,6 +1,78 @@
 const path = require('path')
 const { createPostUrlFromSlug, urlify } = require('../utils')
 const createTags = require('./createTags')
+const jsonToFrontMatter = require('json-to-frontmatter-markdown').default
+
+function createMarkdownFileFromPost(postUrl, edge, graphql) {
+  const { slug } = edge.node
+
+  return graphql(
+    `
+      query blogPostQuery($slug: String!) {
+        contentfulPost(slug: { eq: $slug }) {
+          id
+          slug
+          title {
+            title
+          }
+          subtitle
+          intro {
+            intro
+          }
+          author {
+            name
+          }
+          category {
+            title
+          }
+          tags
+          featuredImage {
+            resolutions {
+              src
+            }
+          }
+          date
+          body {
+            body
+          }
+        }
+      }
+    `,
+    { slug }
+  ).then(result => {
+    const {
+      title,
+      subtitle,
+      intro,
+      author,
+      category,
+      tags,
+      featuredImage,
+      date,
+      body,
+    } = result.data.contentfulPost
+    return jsonToFrontMatter({
+      frontmatterMarkdown: {
+        frontmatter: [
+          {
+            slug,
+            title: title.title,
+            subtitle,
+            intro: intro.intro,
+            authors: author.map(({ name }) => name),
+            categories: category.map(({ title: authorTitle }) => authorTitle),
+            tags,
+            featuredImage: featuredImage.resolutions.src,
+            date,
+          },
+        ],
+        body: body.body,
+      },
+      path: path.join(__dirname, '../..', 'content', 'posts'),
+      fileName: `${slug}.md`,
+    })
+  })
+}
 
 module.exports = ({ graphql, boundActionCreators: { createPage } }) =>
   new Promise((resolve, reject) => {
@@ -23,25 +95,29 @@ module.exports = ({ graphql, boundActionCreators: { createPage } }) =>
       `)
         .then(result => {
           if (result.errors) {
-            reject(result.errors)
+            return reject(result.errors)
           }
-          result.data.allContentfulPost.edges.forEach(edge => {
-            createPage({
-              path: createPostUrlFromSlug(edge.node.slug),
-              component: blogPostTemplate,
-              context: {
-                slug: edge.node.slug,
-              },
+          return Promise.all(
+            result.data.allContentfulPost.edges.map(edge => {
+              if (edge.node.tags) {
+                edge.node.tags.forEach(tag => {
+                  tags[urlify(tag)] = tag
+                })
+              }
+              const postUrl = createPostUrlFromSlug(edge.node.slug)
+              return Promise.all([
+                createMarkdownFileFromPost(postUrl, edge, graphql),
+                createPage({
+                  path: postUrl,
+                  component: blogPostTemplate,
+                  context: {
+                    slug: edge.node.slug,
+                  },
+                }),
+              ])
             })
-            if (edge.node.tags) {
-              edge.node.tags.forEach(tag => {
-                tags[urlify(tag)] = tag
-              })
-            }
-          })
+          )
         })
-        .then(() => {
-          createTags(createPage, tags)
-        })
+        .then(() => createTags(createPage, tags))
     )
   })

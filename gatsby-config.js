@@ -7,6 +7,13 @@ module.exports = {
     title: 'Easybird Blog',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: 'markdown-pages',
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-contentful`,
